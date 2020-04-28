@@ -1,46 +1,89 @@
 <template>
-  <div id="home">
-      <h4>Welcome</h4>
-    <!-- <ul class="collection with-header">
-      <li class="collection-header"><h4>Contributers</h4></li>
-      <li v-for="contributer in contributers" v-bind:key="contributer.id" class="collection-item">
-        <div class="chip">{{contributer.name}}</div>
-        {{contributer.contributer_id}}: {{contributer.name}} 
-         <router-link class="secondary-content" v-bind:to="{ name: 'view-employee', params: { contributer_id: contributer.contributer_id }}"><i class="fa fa-eye"></i></router-link>
-      </li>
-    </ul>
-    <div class="fixed-action-btn">
-      <router-link to="/new" class="btn-floating btn-large red">
-        <i class="fa fa-plus"></i>
-      </router-link>
-    </div> -->
+  <div class="home-container">
+
+    <div class="home-header">
+      <div class="landscape-image">
+          <img src="../../src/images/red-tomatoes.jpg" alt="">
+      </div>
+      <div class="home-title">
+              <h2>Start sharing your recipes!</h2>
+              <ul>
+                <li>Stay connected with your friends</li>
+                <li>Start learning from each other's recipes</li>
+                <li>Find friends with same appetitie</li>
+                <li>Have fun sharing your daily meal photos</li>
+              </ul>
+      </div>
+
+
+    </div>
   </div>
 </template>
 
 <script>
-  import db from 'firebase'
   export default {
-    name: 'home',
-    data () {
-      return {
-        contributers: [],
-        loading: true
-      }
-    },
-    created () {
-      db.collection('contributers').get().then((querySnapshot) => {
-        this.loading = false
-        querySnapshot.forEach((doc) => {
-          const data = {
-            'id': doc.id,
-            'contributer_id': doc.data().contributer_id,
-            'name': doc.data().name,
-            // 'dept': doc.data().dept,
-            // 'position': doc.data().position
-          }
-          this.contributers.push(data)
-        })
-      })
-    }
+    name: 'home', 
   }
 </script>
+
+<style>
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-header {
+  display:flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  position:relative;
+  height:500px;
+}
+
+.landscape-image {
+    /* background:#fff; */
+    filter: brightness(0.4);
+}
+
+.home-header img {
+  height: 100%;
+  width: 100%;
+}
+.home-title {
+  position:absolute;
+  top:20%;
+  left:20%;
+  transform: translate(-20%,-20%);
+  letter-spacing: 3px;
+  color:white;
+  font-family: "Lato", sans-serif;
+}
+
+.home-title h2 {
+  margin-bottom:30px;
+  font-size:30px;
+}
+.home-title ul li{
+  font-size:15px;
+  margin-bottom:20px;
+
+}
+
+@media screen and (max-width: 576px) {
+  .home-title {
+    top:20%;
+    left:20%;
+      transform: translate(-20%,-20%);
+
+  }
+  .home-title ul li{
+    margin:0;
+    font-size:10px;
+  }
+
+}
+</style>

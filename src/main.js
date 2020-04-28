@@ -3,8 +3,12 @@ import App from './App';
 import router from './router';
 import firebase from 'firebase';
 import './components/firebaseInit';
+import GSignInButton from 'vue-google-signin-button'
+import store from "./store"
 
 Vue.config.productionTip = false;
+Vue.use(GSignInButton)
+
 
 let app;
 firebase.auth().onAuthStateChanged(function() {
@@ -12,6 +16,7 @@ firebase.auth().onAuthStateChanged(function() {
     /* eslint-disable no-new */
     app = new Vue({
       router,
+      store,
       render: h => h(App),
     }).$mount('#app')
   }

@@ -38,6 +38,8 @@
 
           <button class="btn-login">Sign in</button>
           <button class="btn-register">Register now</button> 
+
+
         </div>
       </div>
 
@@ -54,7 +56,10 @@ export default {
   data: function() {
     return {
       email: '',
-      password: ''
+      password: '',
+      // googleSignInParams: {
+      //   client_id: 'YOUR_APP_CLIENT_ID.apps.googleusercontent.com'
+      // }
     };
   },
   methods: {
@@ -73,8 +78,20 @@ export default {
           }
         );
       e.preventDefault();
+    },
+
+    onSignInSuccess (googleUser) {
+      // `googleUser` is the GoogleUser object that represents the just-signed-in user.
+      // See https://developers.google.com/identity/sign-in/web/reference#users
+      googleUser.getBasicProfile() // etc etc
+    },
+
+    onSignInError (error) {
+      // `error` contains any error occurred.
+      console.log('OH NOES', error)
     }
   }
+
 };
 </script>
 
@@ -234,5 +251,14 @@ body {
   
 }
 
+.g-signin-button {
+  /* This is where you control how the button looks. Be creative! */
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 3px;
+  background-color: #3c82f7;
+  color: #fff;
+  box-shadow: 0 3px 0 #0f69ff;
+}
 
 </style>

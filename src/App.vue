@@ -14,11 +14,16 @@ export default {
   name: 'app',
   components: {
     Navbar
+  },
+  created(){
+        this.$router.push('/');
+
   }
 };
 </script>
 
 <style>
+@import './assets/styles/global.css';
 nav {
   margin-bottom: 10px;
 }

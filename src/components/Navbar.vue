@@ -3,14 +3,15 @@
         <div class="navbar">
           <div class="navCenter">
             <div class="navHeader">
-              <router-link to='/' class="logo">Goculis</router-link>
+              <router-link to='/' class="logo">GoCulis</router-link>
 
             </div>
             <ul class="navLinks">
-                  <li v-if="isLoggedIn"><router-link to="/">Dashboard</router-link></li>
-                  <li v-if="!isLoggedIn"><router-link to="/login">Login</router-link></li>
-                  <li v-if="!isLoggedIn"><router-link to="/register">Register</router-link></li>
-                  <li v-if="isLoggedIn"><button v-on:click="logout" class="btn black">Logout</button></li>
+                  <li v-if="!isSignin"><router-link to="/signin">Sign in</router-link></li>
+
+                  <li v-if="isSignin"><router-link to="/profile">Profile</router-link></li>
+                  <li v-if="isSignin" @click="signout"><router-link to="/">Sign out</router-link></li>
+
             </ul>
           </div>
         </div>
@@ -18,55 +19,54 @@
 </template>
 
 <script>
-import firebase from 'firebase';
+import {mapGetters,mapActions} from 'vuex'
+
 export default {
   name: 'navbar',
-  data() {
-    return {
-      isLoggedIn: false,
-      currentUser: false
-    };
-  },
-  created() {
-    if (firebase.auth().currentUser) {
-      this.isLoggedIn = true;
-      this.currentUser = firebase.auth().currentUser.email;
+  methods:{...mapActions(['updateSignin']),
+    signout(){
+      this.updateSignin(false)
     }
   },
-  methods: {
-    logout: function() {
-      firebase
-        .auth()
-        .signOut()
-        .then(() => {
-          this.$router.go({ path: this.$router.path });
-        });
-    }
-  }
+
+  computed:mapGetters(['isSignin']),
+
+  // created(){
+  //   this.updateSignin(false)
+  // }
+
 };
 </script>
 
 <style>
 
-.navbar {
-  background-color:rgba(143, 188, 143, 0.527);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+
+.navbar {
+  /* background-color:rgba(143, 188, 143, 0.527); */
+  height:65px;
+  padding: 0 2rem;
 }
 
 .navCenter {
   max-width: 1170px;
-  margin: 0 auto;
+  margin: 50px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 
-@media screen and (min-width: 576px) {
+/* @media screen and (min-width: 576px) {
   .navbar {
     padding: 0 2rem;
   }
-}
+} */
 
 /* 
 @media screen and (min-width: 992px) {
@@ -91,7 +91,7 @@ export default {
 
 .logo {
   font-family: "Lato", sans-serif;
-  font-size:30px;
+  font-size:40px;
   color:black;
   cursor: pointer;
   overflow:hidden;
