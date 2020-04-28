@@ -1,20 +1,20 @@
 <template>
   <nav>
-        <div class="navbar">
-          <div class="navCenter">
-            <div class="navHeader">
-              <router-link to='/' class="logo">GoCulis</router-link>
+        <div class="navbar-container">
 
+            <div class="nav-header">
+              <h2 class="logo">GoCulis</h2>
             </div>
-            <ul class="navLinks">
-                  <li v-if="!isSignin"><router-link to="/signin">Sign in</router-link></li>
 
-                  <li v-if="isSignin"><router-link to="/profile">Profile</router-link></li>
-                  <li v-if="isSignin" @click="signout"><router-link to="/">Sign out</router-link></li>
+            <div class="nav-content">
+              <ul class="nav-links">
+                    <li v-if="!isSignin"><router-link to="/signin">Sign in</router-link></li>
+                    <li v-if="isSignin"><router-link to="/profile">Profile</router-link></li>
+                    <li v-if="isSignin" @click="signout"><router-link to="/">Sign out</router-link></li>
+              </ul>
+            </div>
 
-            </ul>
           </div>
-        </div>
   </nav>
 </template>
 
@@ -31,94 +31,47 @@ export default {
 
   computed:mapGetters(['isSignin']),
 
-  // created(){
-  //   this.updateSignin(false)
-  // }
-
 };
 </script>
 
 <style>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 
-.navbar {
-  /* background-color:rgba(143, 188, 143, 0.527); */
-  height:65px;
-  padding: 0 2rem;
-}
-
-.navCenter {
-  max-width: 1170px;
-  margin: 50px auto;
+.navbar-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
-/* @media screen and (min-width: 576px) {
-  .navbar {
-    padding: 0 2rem;
-  }
-} */
-
-/* 
-@media screen and (min-width: 992px) {
-  .navCenter {
-    max-width: 1170px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-} */
-
-
-.navHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* padding: 1rem 1.25rem; */
-  padding: 0 0;
+  justify-content:space-between;
+  /* margin:20px 20px; */
+  position:fixed;
+  width:100%;
+  height:100px;
+  /* top:0px; */
+  background-color: rgba(255, 255, 255, 0.95);
+  padding:20px 30px;
+  z-index:500;
+  /* height:100px; */
 
 }
 
-.logo {
-  font-family: "Lato", sans-serif;
-  font-size:40px;
-  color:black;
-  cursor: pointer;
-  overflow:hidden;
+.nav-header .logo {
   text-decoration:none;
-  font-weight: bold;
+  font-size:30px;
+  font-family: var(--font-style-two);
+  color:var(--text-color);
 }
 
-.navLinks {
-    list-style-type: none;
-    height: auto;
-    display: flex;
-    text-decoration: none;
-
+.nav-links {
+  /* padding:20px 20px; */
+  list-style-type: none;
+  text-decoration:none;
 }
 
-.navLinks a {
-  /* display: block; */
-  padding: 1rem 1rem;
-  text-decoration: none;
-  text-transform: capitalize;
-  color: black;
-  /* transition: var(--mainTransition); */
-  /* font-weight: bold; */
-}
+.nav-links a {
+  text-decoration:none;
+  color:var(--text-color);
+  font-family: var(--font-style-two);
+  font-size:18px;
 
-.navLinks a:hover{
-  font-weight: bold;
-}
 
+}
 </style>
