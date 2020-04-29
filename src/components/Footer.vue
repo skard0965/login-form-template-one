@@ -4,7 +4,9 @@
             <h2 class="logo">GC</h2>
         </div>
 
-        <p class="copyright">&copy; 2020 GoCulis</p>
+        <div class="footer-content">
+            <p class="copyright">&copy; 2020 GoCulis</p>
+        </div>
 
     </div>
 </template>
@@ -17,13 +19,14 @@ export default {
 </script>
 
 <style>
+
 .footer-container {
     height:150px;
-    background-color:black;
-    padding:20px 30px;
+    background-color:var(--text-color);
     display:flex;
     flex-direction: column;
-
+    padding-left:90px;
+    padding-top:20px;
 }
 
 .footer-logo {
@@ -43,13 +46,16 @@ export default {
     font-family: var(--font-style-two);
     color:var(--text-color);
     font-size:20px;
-
 }
 
-.footer-container .copyright {
+.footer-content .copyright{
     color:var(--footer-back-color);
-    font-size:15px;
 }
 
+@media screen and (max-width: 500px) {
+    .footer-container{
+        padding-left:20px;
 
+    }
+}
 </style>

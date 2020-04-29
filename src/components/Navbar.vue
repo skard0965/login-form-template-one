@@ -38,6 +38,7 @@ export default {
 
 
 
+
 .navbar-container {
   display: flex;
   justify-content:space-between;
@@ -45,6 +46,8 @@ export default {
   position:fixed;
   width:100%;
   height:100px;
+  top:0;
+  left:0;
   /* top:0px; */
   background-color: rgba(255, 255, 255, 0.95);
   padding:20px 30px;
@@ -53,6 +56,23 @@ export default {
 
 }
 
+.nav-header{
+    /* padding-left:60px; */
+    padding-left:60px;
+
+    align-items: center;
+    display:flex;
+    justify-content: center;
+}
+
+.nav-content{
+    padding-right:60px;
+    align-items: center;
+    display:flex;
+    justify-content: center;
+
+
+}
 .nav-header .logo {
   text-decoration:none;
   font-size:30px;
@@ -73,5 +93,14 @@ export default {
   font-size:18px;
 
 
+}
+
+@media screen and (max-width: 500px) {
+.nav-header{
+  padding-left:0px;
+}
+.nav-content {
+padding-right:0px;
+}
 }
 </style>
