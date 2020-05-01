@@ -1,51 +1,49 @@
 <template>
 
-<div class="signin-container">
+<div class="signup">
+    
     <Home class="home"/>
 
-    <div class="signin">
 
-        <!-- <h2>Welcome Back</h2> -->
 
         <div class="close-btn">
             <button class="closeWindow" v-on:click="closeWindow"><i class="fas fa-times"></i></button>
         </div>
 
 
-         <div class="signin-header">
-            <h2 class="signin-title">Welcome back.</h2>
-            <p class="signin-description">Sign in to have access to all the food recipes that you love!</p>
+         <div class="signup-header">
+            <h2 class="signup-title">Join Goculis</h2>
+            <p class="signup-description">Create an account to have access to all contributer's food recipes and start your own journey as a contributer!</p>
         </div>
 
 
 
-        <div class="signin-content">
-            <div class="signin-google">
+        <div class="signup-content">
+            <div class="signup-google">
                  <div class="google-icon-wrapper">
                     <img class="icon" src="@/images/icons8-google-48.png">
                 </div>
 
-                <button v-on:click="signinGoogle" class="google-signin-button">
-                    Sign in with Google
+                <button v-on:click="signupGoogle" class="google-signin-button">
+                    Sign up with Google
                 </button> 
             </div>
 
-            <div class="signin-microsoft">
+            <div class="signup-microsoft">
                 <div class="microsoft-icon-wrapper">
                     <img class="icon" src="@/images/icons8-microsoft-48.png">
                 </div>
 
-                <button class="microsoft-signin-button">
-                    Sign in with Microsoft
+                <button class="microsoft-signup-button">
+                    Sign up with Microsoft
                 </button> 
             </div>
 
             <div class="closing-para">
-                <p>No account?<button class="closing-link" href="" @click="directSignUp">Create one</button></p>
+                <p>Already have an account?<button class="closing-link" href="" @click="directSignIn">Sign in</button></p>
             </div>
         </div>
 
-    </div>
 </div>
 
 </template>
@@ -55,14 +53,14 @@ import {mapGetters, mapActions} from 'vuex'
 import Home from "@/components/Home"
 
 export default {
-  name: 'signin',
+  name: 'signup',
   components:{
       Home
   },
   methods: {
-    ...mapActions(['updateSignin']),
-        signinGoogle:function() {
-            this.updateSignin(true);
+    ...mapActions(['updatesignup']),
+        signupGoogle:function() {
+            this.updatesignup(true);
             this.$router.push('/dashboard');
         },
 
@@ -70,13 +68,13 @@ export default {
             this.$router.push('/');
         },
 
-        directSignUp:function(){
-            this.$router.push('/signup');
+        directSignIn:function(){
+            this.$router.push('/signin');
 
         }
     },
 
-  computed:mapGetters(['isSignin']),
+  computed:mapGetters(['issignup']),
 
 };
 
@@ -86,7 +84,7 @@ export default {
 <style>
 
 
-.signin {
+.signup {
     position: fixed;
     top:50%;
     left:50%;
@@ -117,7 +115,7 @@ export default {
     cursor:pointer;
 }
 
-.signin-header {
+.signup-header {
   color:var(--text-color);
   display:flex;
   flex-direction: column;
@@ -125,26 +123,27 @@ export default {
   align-items: center;
   align-content: center;
   letter-spacing: -1px;
-    visibility: visible;
+visibility: visible;
 
 
 }
 
-.signin-title {
+.signup-title {
   font-family:var(--font-style-one);
   font-size:28px;
   font-weight: 550;
   line-height: 30px;
 }
 
-.signin-description,.closing-para{
+.signup-description,.closing-para{
     font-family:var(--font-style-three);
     font-weight: 100;
     font-size:17px;
     padding:10px 90px;
     text-align: center;
-    line-height: 28px;
+      line-height: 28px;
 }
+
 
 .closing-para {
         font-size:15px;
@@ -161,13 +160,14 @@ export default {
 
 }
 
-.signin-logo{
+
+.signup-logo{
     font-size:30px;
     letter-spacing: 2px;
     font-weight: bold;
 }
 
-.signin-content{
+.signup-content{
     display:flex;
     flex-direction:column;
     justify-content: center;
@@ -176,7 +176,7 @@ export default {
     margin-top:60px;
 }
 
-.signin-google, .signin-microsoft{
+.signup-google, .signup-microsoft{
     display:flex;
     flex-direction: row;
     justify-content: center;
@@ -209,7 +209,7 @@ export default {
         line-height:20px;
 }
 
-.google-signin-button,.microsoft-signin-button {
+.google-signup-button,.microsoft-signup-button {
     display: flex;
     justify-content: center;
     align-content: center;

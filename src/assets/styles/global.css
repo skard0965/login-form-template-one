@@ -3,12 +3,32 @@
     padding: 0; */
     box-sizing: border-box;
 }
-
+/* 
 body{
     margin-left:50px;
     margin-right:50px;
     text-rendering: optimizeLegibility;
+} */
+
+
+body.modal-open {
+    overflow: hidden;
+        position: fixed;
 }
+
+.closeWindow{
+    position: fixed;
+    top:2%;
+    right:2%;
+    border:none;
+    background-color:#fff;
+    font-size:15px;
+    /* padding:2px 3px; */
+    color:var(--text-color-two);
+    cursor:pointer;
+}
+
+
   
 :root {
     --primary-green-color: rgb(233, 236, 223);
@@ -22,6 +42,8 @@ body{
 
     --footer-back-color:rgba(255, 255, 255, 0.9);
     --text-color:rgba(0, 0, 0, 0.84);
+
+    --border-color:rgba(0, 0, 0, 0.54);
 
     --text-color-two:rgba(0, 0, 0, 0.54);
     --font-style-one:medium-marketing-display-font, Georgia, Cambria, "Times New Roman", Times, serif;

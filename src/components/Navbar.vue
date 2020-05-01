@@ -8,9 +8,11 @@
 
             <div class="nav-content">
               <ul class="nav-links">
-                    <li v-if="!isSignin"><router-link to="/signin">Sign in</router-link></li>
+                    <li v-if="!isSignin" ><router-link to="/signin">Sign in</router-link></li>
+                    <li v-if="!isSignin" ><router-link to="/signup">Sign up</router-link></li>
+
                     <li v-if="isSignin"><router-link to="/profile">Profile</router-link></li>
-                    <li v-if="isSignin" @click="signout"><router-link to="/">Sign out</router-link></li>
+                    <li v-if="isSignin"><router-link to="/">Sign out</router-link></li>
               </ul>
             </div>
 
@@ -23,11 +25,13 @@ import {mapGetters,mapActions} from 'vuex'
 
 export default {
   name: 'navbar',
+  
   methods:{...mapActions(['updateSignin']),
     signout(){
       this.updateSignin(false)
     }
   },
+
 
   computed:mapGetters(['isSignin']),
 
@@ -51,28 +55,20 @@ export default {
   /* top:0px; */
   background-color: rgba(255, 255, 255, 0.95);
   padding:20px 30px;
-  z-index:500;
+  /* z-index:500; */
   /* height:100px; */
 
 }
 
+
 .nav-header{
     /* padding-left:60px; */
     padding-left:60px;
-
     align-items: center;
     display:flex;
     justify-content: center;
 }
 
-.nav-content{
-    padding-right:60px;
-    align-items: center;
-    display:flex;
-    justify-content: center;
-
-
-}
 .nav-header .logo {
   text-decoration:none;
   font-size:30px;
@@ -80,17 +76,33 @@ export default {
   color:var(--text-color);
 }
 
+.nav-content{
+    padding-right:60px;
+    /* align-items: center;
+    display:flex;
+    justify-content: center; */
+}
+
+
+
 .nav-links {
   /* padding:20px 20px; */
   list-style-type: none;
   text-decoration:none;
+  display:flex;
+  flex-direction: row;
+  align-content: center;
+  text-align: center;
+    padding-top:15px;
+
 }
 
 .nav-links a {
   text-decoration:none;
   color:var(--text-color);
   font-family: var(--font-style-two);
-  font-size:18px;
+  font-size:15px;
+  padding-left:20px;
 
 
 }
