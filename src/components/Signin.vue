@@ -1,11 +1,11 @@
 <template>
 
-<div class="signin-container">
+<div class="container">
     <Home class="home"/>
 
-    <div class="signin">
+    <div class="form-container">
 
-        <!-- <h2>Welcome Back</h2> -->
+        <div class="form-inside-container">
 
         <div class="close-btn">
             <button class="closeWindow" v-on:click="closeWindow"><i class="fas fa-times"></i></button>
@@ -45,8 +45,11 @@
             </div>
         </div>
 
+        </div>
+
     </div>
 </div>
+
 
 </template>
 
@@ -86,7 +89,7 @@ export default {
 <style>
 
 
-.signin {
+/* .signin {
     position: fixed;
     top:50%;
     left:50%;
@@ -103,19 +106,8 @@ export default {
     border-radius: 5px;
     margin-top:40px;
     z-index:900;
-}
+} */
 
-.closeWindow{
-    position: fixed;
-    top:2%;
-    right:2%;
-    border:none;
-    background-color:#fff;
-    font-size:15px;
-    /* padding:2px 3px; */
-    color:var(--text-color-two);
-    cursor:pointer;
-}
 
 .signin-header {
   color:var(--text-color);
@@ -126,6 +118,7 @@ export default {
   align-content: center;
   letter-spacing: -1px;
     visibility: visible;
+    margin-top:30px;
 
 
 }
@@ -141,14 +134,12 @@ export default {
     font-family:var(--font-style-three);
     font-weight: 100;
     font-size:17px;
-    padding:10px 90px;
     text-align: center;
     line-height: 28px;
 }
 
 .closing-para {
         font-size:15px;
-
 }
 
 .closing-link {
@@ -205,7 +196,6 @@ export default {
 .google-icon-wrapper img,.microsoft-icon-wrapper img {
         height:85%;
         width:auto;
-        padding:6px 6px;
         line-height:20px;
 }
 

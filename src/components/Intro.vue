@@ -1,6 +1,7 @@
 <template>
 <div class="container">
     <Home class="home"/>
+
     <div class="form-container">
         <div class="form-inside-container">
             <button class="closeWindow" v-on:click="closeWindow"><i class="fas fa-times"></i></button>
@@ -52,30 +53,6 @@ export default {
 
 <style>
 
-.home{
-    opacity: 0.1;
-}
-.form-container {
-    position: fixed;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-
-    width:500px; 
-    height:450px;
-    background-color:#fff;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.212);
-    border-radius: 5px;
-    z-index:900;
-}
-
-.form-inside-container{
-    margin:10px 25px;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .form-content {
   color:var(--text-color);
   display:flex;
@@ -95,15 +72,9 @@ export default {
     font-weight: 400;
     font-size:15px;
     margin-top:3px;
-
-
-    /* margin:0;
-    padding:8px 0px; */
 }
 
 .input-name{
-    /* margin-top:10px;
-    padding:10px; */
     border-radius: 5px;
     font-size:15px;
     margin-top:10px;
@@ -127,14 +98,13 @@ export default {
     border-radius:3px;
     color:white;
     background-color:var(--secondary-green-color);
-    /* margin-top:10px; */
 }
 
 
 
 .photo-browser-btn{
-  height:30px;
-  width:100px;
+    height:30px;
+    width:100px;
     background-color:rgba(89, 155, 194, 0.418);
     font-size:13px;
     color:rgb(73, 128, 160);
