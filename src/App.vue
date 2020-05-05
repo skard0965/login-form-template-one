@@ -27,7 +27,7 @@ export default {
 
 <style>
 @import './assets/styles/global.css';
-nav {
+/* nav {
   margin-bottom: 10px;
-}
+} */
 </style>

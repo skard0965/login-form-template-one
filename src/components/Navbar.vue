@@ -47,14 +47,18 @@ export default {
   display: flex;
   justify-content:space-between;
   /* margin:20px 20px; */
-  position:fixed;
+  
   width:100%;
   height:100px;
+  position:fixed;
   top:0;
   left:0;
-  /* top:0px; */
   background-color: rgba(255, 255, 255, 0.95);
   padding:20px 30px;
+
+      /* position: absolute;
+    top: 0px;
+    flex: 0 0 auto; */
   /* z-index:500; */
   /* height:100px; */
 

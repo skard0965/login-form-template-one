@@ -111,6 +111,13 @@ export default {
     border:1px solid rgb(73, 128, 160);
     border-radius: 3px;
     margin-top:5px;
+    cursor: pointer;
+
+}
+
+.photo-browser-btn:hover{
+    background-color:rgba(61, 108, 134, 0.418);
+    font-weight: 500;
 }
 
 .submit-form-btn {
@@ -123,6 +130,12 @@ export default {
     color:#fff;
     background-color:var(--btn-color);
     margin-top:30px;
+    cursor: pointer;
+}
+
+.submit-form-btn:hover{
+        background-color: var(--dark-green);
+
 }
 
 

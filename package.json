@@ -13,7 +13,9 @@
     "mdbvue": "^6.7.0",
     "vue": "^2.6.11",
     "vue-google-signin-button": "^1.0.4",
-    "vue-router": "^3.1.6"
+    "vue-router": "^3.1.6",
+    "vue-upload-image": "^1.1.5",
+    "vue2-perfect-scrollbar": "^1.5.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",

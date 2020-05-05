@@ -1,5 +1,6 @@
 <template>
-    <div class="footer-container">
+<div class="container">
+        <div class="footer-container">
         <div class="footer-logo">
             <h2 class="logo">GC</h2>
         </div>
@@ -9,6 +10,8 @@
         </div>
 
     </div>
+</div>
+
 </template>
 
 <script>
@@ -20,18 +23,21 @@ export default {
 
 <style>
 
+
 .footer-container {
     height:150px;
+    width:100%;
     background-color:var(--text-color);
     display:flex;
     flex-direction: column;
-    padding-left:90px;
-    padding-top:20px;
+
 }
 
 .footer-logo {
     height:40px;
     width:40px;
+    margin-left:90px;
+    margin-top:10px;
     vertical-align: middle;
     background-color:var(--footer-back-color);
     text-align: center;
@@ -48,6 +54,9 @@ export default {
     font-size:20px;
 }
 
+.footer-content{
+    margin-left:90px;
+}
 .footer-content .copyright{
     color:var(--footer-back-color);
 }
